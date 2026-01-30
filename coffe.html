@@ -5,45 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Website</title>
-
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
+  <link rel="stylesheet" href="../src/output.css">
     <style>
         body {
             font-family: sans-serif;
             background: #4e4141;
+            
         }
     </style>
 </head>
 
-<body class="bg-[#4e4141] flex justify-center ">
+<body class="bg-[#4e4141] flex justify-center">
 
-    <div class="w-[930px] bg-[#ebd0c2] shadow-xl rounded-md overflow-hidden">
+    <div class=" w-full max-w-6xl bg-[#ebd0c2] shadow-xl rounded-md overflow-hidden">
 
         <!-- HEADER + HERO IMAGE -->
         <header class="relative">
             <nav class="flex justify-between items-center px-5 py-4 text-[#4e3f38]">
-                <span class="font-bold text-lg">Cofy Solutions</span>
-                <ul class="hidden md:flex gap-6 text-sm cursor-pointer ">
-                    <li class="hover:text-amber-50">Home</li>
-                    <li class="hover:text-amber-50">Menu</li>
-                    <li class="hover:text-amber-50">Blog</li>
-                    <li class="hover:text-amber-50">Media</li>
-                    <li class="hover:text-amber-50">Contact</li>
+                <span class="font-bold text-lg cursor-pointer">Cofy Solutions</span>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex gap-6 text-sm cursor-pointer text-center">
+                    <li class="hover:text-white hover:bg-[#4e4141] px-3 py-1 rounded transition">Home</li>
+                    <li class="hover:text-white hover:bg-[#4e4141] px-3 py-1 rounded transition">Menu</li>
+                    <li class="hover:text-white hover:bg-[#4e4141] px-3 py-1 rounded transition">Blog</li>
+                    <li class="hover:text-white hover:bg-[#4e4141] px-3 py-1 rounded transition">Media</li>
+                    <li class="hover:text-white hover:bg-[#4e4141] px-3 py-1 rounded transition">Contact</li>
                 </ul>
-                <span class="text-xl"></span>
+
+                <!-- Hamburger for Mobile -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-2xl focus:outline-none cursor-pointer">☰</button>
+                </div>
             </nav>
+
+            <!-- Mobile Menu (CENTERED) -->
+            <ul id="mobile-menu"
+                class="hidden flex-col gap-2 px-5 pb-4 text-[#4e4141] transition-all duration-300 ease-in-out items-center text-center">
+                <li
+                    class="hover:text-white hover:bg-[#4e4141] px-4 py-2 rounded cursor-pointer transition w-full max-w-xs">
+                    Home</li>
+                <li
+                    class="hover:text-white hover:bg-[#4e4141] px-4 py-2 rounded cursor-pointer transition w-full max-w-xs">
+                    Menu</li>
+                <li
+                    class="hover:text-white hover:bg-[#4e4141] px-4 py-2 rounded cursor-pointer transition w-full max-w-xs">
+                    Blog</li>
+                <li
+                    class="hover:text-white hover:bg-[#4e4141] px-4 py-2 rounded cursor-pointer transition w-full max-w-xs">
+                    Media</li>
+                <li
+                    class="hover:text-white hover:bg-[#4e4141] px-4 py-2 rounded cursor-pointer transition w-full max-w-xs">
+                    Contact</li>
+            </ul>
 
             <!-- HERO SECTION -->
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348"
                     class="w-full h-56 object-cover rounded-b-[60px]">
 
-                <div class="absolute bottom-10 left-6 text-white">
+                <div class="absolute bottom-10 left-6 text-white text-center md:text-left">
                     <p class="text-xl font-light">FRESHLY ROASTED</p>
                     <p class="text-3xl font-bold">COFFEE</p>
-                    <button class="mt-3 bg-white text-black px-4 py-2 rounded-md text-sm">
+                    <button
+                        class="mt-3 bg-white text-black px-4 py-2 rounded-md text-sm hover:bg-gray-200 transition cursor-pointer">
                         Shop Now
                     </button>
                 </div>
@@ -52,97 +77,112 @@
 
         <!-- TOP CATEGORIES -->
         <section class="px-5 py-8 text-center">
-            <h2 class="text-lg font-bold">TOP CATEGORIES</h2>
-            <p class="text-sm text-gray-600 mb-6">Explore The Recent Most Bought Drinks This Week</p>
+            <h2 class="text-lg font-bold text-center">TOP CATEGORIES</h2>
+            <p class="text-sm text-gray-600 mb-6 text-center">Explore The Recent Most Bought Drinks This Week</p>
 
-            <div class="grid grid-cols-3 gap-3">
-                <div class="p-2 bg-white rounded-xl shadow">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-center">
+                <div
+                    class="p-2 bg-white rounded-xl shadow hover:scale-105 hover:bg-[#f0cfc1] transition transform cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
-                        class="h-20 w-full rounded-lg object-cover">
+                        class="h-28 w-full rounded-lg object-cover">
                     <p class="mt-2 font-semibold text-sm">Coffee Mocha</p>
-                    <button class="text-xs text-gray-700 mt-1">View More</button>
+                    <button class="text-xs text-gray-700 mt-1 hover:text-black transition cursor-pointer">View
+                        More</button>
                 </div>
 
-                <div class="p-2 bg-white rounded-xl shadow">
+                <div
+                    class="p-2 bg-white rounded-xl shadow hover:scale-105 hover:bg-[#f0cfc1] transition transform cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
-                        class="h-20 w-full rounded-lg object-cover">
+                        class="h-28 w-full rounded-lg object-cover">
                     <p class="mt-2 font-semibold text-sm">Expresso Americano</p>
-                    <button class="text-xs">View More</button>
+                    <button class="text-xs text-gray-700 mt-1 hover:text-black transition cursor-pointer">View
+                        More</button>
                 </div>
 
-                <div class="p-2 bg-white rounded-xl shadow">
+                <div
+                    class="p-2 bg-white rounded-xl shadow hover:scale-105 hover:bg-[#f0cfc1] transition transform cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
-                        class="h-20 w-full rounded-lg object-cover">
+                        class="h-28 w-full rounded-lg object-cover">
                     <p class="mt-2 font-semibold text-sm">Cappuccino</p>
-                    <button class="text-xs">View More</button>
+                    <button class="text-xs text-gray-700 mt-1 hover:text-black transition cursor-pointer">View
+                        More</button>
                 </div>
             </div>
         </section>
 
         <!-- TOP MILK SHAKES -->
         <section class="px-5 py-8 text-center">
-            <h2 class="text-lg font-bold">TOP MILK SHAKES</h2>
-            <p class="text-sm text-gray-600 mb-6">
-                Explore The Recent Most Bought Shakes This Week
-            </p>
+            <h2 class="text-lg font-bold text-center">TOP MILK SHAKES</h2>
+            <p class="text-sm text-gray-600 mb-6 text-center">Explore The Recent Most Bought Shakes This Week</p>
 
-            <div class="grid grid-cols-3 gap-3 text-center">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-center">
 
-                <div class="bg-white p-3 rounded-xl shadow">
+                <div
+                    class="bg-white p-3 rounded-xl shadow hover:scale-105 hover:bg-[#f0cfc1] transition transform cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8"
-                        class="h-20 w-full object-cover rounded-lg">
+                        class="h-28 w-full object-cover rounded-lg">
                     <p class="font-semibold text-sm mt-2">Mocha Shake</p>
                     <p class="text-sm text-gray-600">$20.00</p>
-                    <button class="mt-2 text-xs bg-black text-white px-3 py-1 rounded">BUY NOW</button>
+                    <button
+                        class="mt-2 text-xs bg-black text-white px-3 py-1 rounded hover:bg-gray-800 transition cursor-pointer">BUY
+                        NOW</button>
                 </div>
 
-                <div class="bg-white p-3 rounded-xl shadow">
+                <div
+                    class="bg-white p-3 rounded-xl shadow hover:scale-105 hover:bg-[#f0cfc1] transition transform cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
-                        class="h-20 w-full object-cover rounded-lg">
+                        class="h-28 w-full object-cover rounded-lg">
                     <p class="font-semibold text-sm mt-2">Lavender Shake</p>
                     <p class="text-sm text-gray-600">$20.00</p>
-                    <button class="mt-2 text-xs bg-black text-white px-3 py-1 rounded">BUY NOW</button>
+                    <button
+                        class="mt-2 text-xs bg-black text-white px-3 py-1 rounded hover:bg-gray-800 transition cursor-pointer">BUY
+                        NOW</button>
                 </div>
 
-                <div class="bg-white p-3 rounded-xl shadow">
+                <div
+                    class="bg-white p-3 rounded-xl shadow hover:scale-105 hover:bg-[#f0cfc1] transition transform cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
-                        class="h-20 w-full object-cover rounded-lg">
+                        class="h-28 w-full object-cover rounded-lg">
                     <p class="font-semibold text-sm mt-2">Caramel Shake</p>
                     <p class="text-sm text-gray-600">$20.00</p>
-                    <button class="mt-2 text-xs bg-black text-white px-3 py-1 rounded">BUY NOW</button>
+                    <button
+                        class="mt-2 text-xs bg-black text-white px-3 py-1 rounded hover:bg-gray-800 transition cursor-pointer">BUY
+                        NOW</button>
                 </div>
 
             </div>
         </section>
 
         <!-- LATEST BLOGS -->
-        <section class="px-5 py-10 text-center items-center justify-center flex flex-col ">
-            <h2 class="text-lg font-bold">LATEST BLOGS</h2>
-            <p class="text-sm text-gray-600 mb-6">Explore Our Latest Articles</p>
+        <section class="px-5 py-10 text-center">
+            <h2 class="text-lg font-bold text-center">LATEST BLOGS</h2>
+            <p class="text-sm text-gray-600 mb-6 text-center">Explore Our Latest Articles</p>
 
-            <div class="grid grid-cols-1 gap-4">
+            <div class="grid md:grid-cols-2 gap-4">
 
-                <div class="bg-white p-4 rounded-xl shadow flex gap-3">
+                <div
+                    class="bg-white p-4 rounded-xl shadow hover:scale-105 hover:bg-[#f0cfc1] transition transform flex flex-col md:flex-row items-center gap-3 cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348"
-                        class="w-20 h-20 rounded-lg object-cover">
-                    <div>
+                        class="w-full md:w-32 h-32 rounded-lg object-cover">
+                    <div class="text-center md:text-right">
                         <h3 class="font-bold text-sm">Coffee Connoisseur</h3>
-                        <p class="text-xs text-gray-600 mt-1">
-                            Dive into the world of premium coffee blends…
-                        </p>
-                        <button class="text-xs mt-2 bg-black text-white px-3 py-1 rounded">READ MORE</button>
+                        <p class="text-xs text-gray-600 mt-1">Dive into the world of premium coffee blends…</p>
+                        <button
+                            class="text-xs mt-2 bg-black text-white px-3 py-1 rounded hover:bg-gray-800 transition cursor-pointer">READ
+                            MORE</button>
                     </div>
                 </div>
 
-                <div class="bg-white p-4 rounded-xl shadow flex gap-3">
+                <div
+                    class="bg-white p-4 rounded-xl shadow hover:scale-105 hover:bg-[#f0cfc1] transition transform flex flex-col md:flex-row items-center gap-3 cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
-                        class="w-20 h-20 rounded-lg object-cover">
-                    <div>
+                        class="w-full md:w-32 h-32 rounded-lg object-cover">
+                    <div class="text-center md:text-right">
                         <h3 class="font-bold text-sm">Coffee Culture</h3>
-                        <p class="text-xs text-gray-600 mt-1">
-                            Join the coffee community and explore…
-                        </p>
-                        <button class="text-xs mt-2 bg-black text-white px-3 py-1 rounded">READ MORE</button>
+                        <p class="text-xs text-gray-600 mt-1">Join the coffee community and explore…</p>
+                        <button
+                            class="text-xs mt-2 bg-black text-white px-3 py-1 rounded hover:bg-gray-800 transition cursor-pointer">READ
+                            MORE</button>
                     </div>
                 </div>
 
@@ -151,58 +191,49 @@
 
         <!-- FOOTER -->
         <footer class="bg-[#2c2421] text-white p-6 rounded-t-xl">
-            <div class="grid grid-cols-4 gap-4 text-sm">
-                <div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-center">
+                <div class="hover:bg-[#4e4141] transition px-2 py-1 rounded cursor-pointer">
                     <h4 class="font-bold mb-2">Products</h4>
                     <p>Shoes</p>
                 </div>
 
-                <div>
+                <div class="hover:bg-[#4e4141] transition px-2 py-1 rounded cursor-pointer">
                     <h4 class="font-bold mb-2">Category</h4>
                     <p>Men</p>
                     <p>New In</p>
                     <p>Weekly Picks</p>
                 </div>
 
-                <div>
+                <div class="hover:bg-[#4e4141] transition px-2 py-1 rounded cursor-pointer">
                     <h4 class="font-bold mb-2">Company Info</h4>
                     <p>About us</p>
                     <p>Payment Options</p>
                     <p>Support</p>
                 </div>
 
-
-                <div>
+                <div class="hover:bg-[#4e4141] transition px-2 py-1 rounded cursor-pointer">
                     <h4 class="font-bold mb-2">Follow us</h4>
                     <p>📘 Facebook</p>
                     <p>📷 Instagram</p>
-
                 </div>
-
-                <div>
-                    <h4 class="font-bold mb-2">Company Info</h4>
-                    <p>About us</p>
-                    <p>Payment Options</p>
-                    <p>Support</p>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-2">Company Info</h4>
-                    <p>About us</p>
-                    <p>Payment Options</p>
-                    <p>Support</p>
-                </div>
-
-
             </div>
 
-
-            <div class="mt-5 text-xs text-center text-gray-300">
-                Privacy Policy • Terms • Cookie settings / developed by mojeeb noori 
+            <div class="mt-5 text-xs text-center text-gray-300 cursor-pointer">
+                Privacy Policy • Terms • Cookie settings / developed by Mojeeb Noori
             </div>
         </footer>
 
     </div>
+
+    <!-- JS for Mobile Menu -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 
